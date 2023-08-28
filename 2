@@ -1,0 +1,187 @@
+1. Print the unit digit of a given number:
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    int unit_digit = num % 10;
+    printf("Unit digit: %d\n", unit_digit);
+    return 0;
+}
+2. Print a given number without its last digit:
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    int num_without_last_digit = num / 10;
+    printf("Number without last digit: %d\n", num_without_last_digit);
+    return 0;
+}
+3. Swap values of two int variables:
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter the value of a: ");
+    scanf("%d", &a);
+    printf("Enter the value of b: ");
+    scanf("%d", &b);
+
+    int temp = a;
+    a = b;
+    b = temp;
+
+    printf("After swapping - a: %d, b: %d\n", a, b);
+    return 0;
+}
+4. Swap values of two int variables without using a third variable:
+
+#include <stdio.h>
+
+int main() {
+    int a, b;
+    printf("Enter the value of a: ");
+    scanf("%d", &a);
+    printf("Enter the value of b: ");
+    scanf("%d", &b);
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("After swapping - a: %d, b: %d\n", a, b);
+    return 0;
+}
+5. Display the sum of digits of a three-digit number:
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a three-digit number: ");
+    scanf("%d", &num);
+    
+    int sum_of_digits = (num / 100) + ((num / 10) % 10) + (num % 10);
+    printf("Sum of digits: %d\n", sum_of_digits);
+    return 0;
+}
+6. Display ASCII code of a character:
+
+#include <stdio.h>
+
+int main() {
+    char ch;
+    printf("Enter a character: ");
+    scanf(" %c", &ch);  // Notice the space before %c to consume newline from previous input
+    
+    int ascii_code = ch;
+    printf("ASCII code: %d\n", ascii_code);
+    return 0;
+}
+7. Find the position of the first 1 in LSB (Least Significant Bit):
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    int position = 0;
+    while ((num & 1) == 0) {
+        num >>= 1;
+        position++;
+    }
+
+    printf("Position of first 1 in LSB: %d\n", position);
+    return 0;
+}
+8. Check whether a given number is even or odd using bitwise operator:
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+
+    if (num & 1) {
+        printf("Odd\n");
+    } else {
+        printf("Even\n");
+    }
+
+    return 0;
+}
+9. Print size of int, float, char, and double type variables:
+
+#include <stdio.h>
+
+int main() {
+    printf("Size of int: %lu bytes\n", sizeof(int));
+    printf("Size of float: %lu bytes\n", sizeof(float));
+    printf("Size of char: %lu bytes\n", sizeof(char));
+    printf("Size of double: %lu bytes\n", sizeof(double));
+    return 0;
+}
+10. Make the last digit of a number zero:
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a number: ");
+    scanf("%d", &num);
+    
+    int num_with_zero_last_digit = num / 10 * 10;
+    printf("Number with last digit as zero: %d\n", num_with_zero_last_digit);
+    return 0;
+}
+11. Append a digit to a number:
+
+#include <stdio.h>
+
+int main() {
+    int number, digit;
+    printf("Enter a number: ");
+    scanf("%d", &number);
+    printf("Enter a digit to append: ");
+    scanf("%d", &digit);
+
+    int resulting_number = number * 10 + digit;
+    printf("Resulting number: %d\n", resulting_number);
+    return 0;
+}
+12. Convert INR to USD using a fixed exchange rate:
+
+#include <stdio.h>
+
+int main() {
+    float inr_amount;
+    printf("Enter amount in INR: ");
+    scanf("%f", &inr_amount);
+    
+    float usd_exchange_rate = 76.23;
+    float usd_amount = inr_amount / usd_exchange_rate;
+    printf("Amount in USD: %.2f\n", usd_amount);
+    return 0;
+}
+13. Rotate the digits of a three-digit number to the right:
+
+#include <stdio.h>
+
+int main() {
+    int num;
+    printf("Enter a three-digit number: ");
+    scanf("%d", &num);
+
+    int last_digit = num % 10;
+    int num_without_last_digit = num / 10;
+    int rotated_number = last_digit * 100 + num_without_last_digit;
+    
+    printf("Rotated number: %d\n", rotated_number);
+    return 0;
+}
